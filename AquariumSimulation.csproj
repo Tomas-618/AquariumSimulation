@@ -47,6 +47,7 @@
     <Compile Include="EnumerableExtension.cs" />
     <Compile Include="Fish.cs" />
     <Compile Include="FishFarmer.cs" />
+    <Compile Include="IReadOnlyAquarium.cs" />
     <Compile Include="IReadOnlyFish.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
