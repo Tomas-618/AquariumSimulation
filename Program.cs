@@ -1,5 +1,4 @@
-﻿
-namespace AquariumSimulation
+﻿namespace AquariumSimulation
 {
     internal class Program
     {
