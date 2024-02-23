@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace AquariumSimulation
 {
-    public class Aquarium
+    public class Aquarium : IReadOnlyAquarium
     {
         private readonly List<Fish> _fishes;
         private readonly int _maxFishesCount;
@@ -19,7 +19,7 @@ namespace AquariumSimulation
 
         public IReadOnlyList<IReadOnlyFish> Fishes => _fishes;
 
-        public int MaxFishesCount => _maxFishesCount;
+        public int MaxCapacity => _maxFishesCount;
 
         public bool IsFull => _fishes.Count == _maxFishesCount;
 

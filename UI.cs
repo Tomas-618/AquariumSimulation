@@ -5,21 +5,18 @@ namespace AquariumSimulation
 {
     public class UI
     {
+        private IReadOnlyAquarium _aquarium;
         private IReadOnlyList<IReadOnlyFish> _fishes;
-        private int _maxFishesCount;
 
-        public UI(IReadOnlyList<IReadOnlyFish> fishes, in int maxFishesCount)
+        public UI(IReadOnlyAquarium aquarium)
         {
-            if (maxFishesCount <= 0)
-                throw new ArgumentOutOfRangeException($"{nameof(maxFishesCount)}: {maxFishesCount}");
-
-            _fishes = fishes ?? throw new ArgumentNullException(nameof(fishes));
-            _maxFishesCount = maxFishesCount;
+            _aquarium = aquarium ?? throw new ArgumentNullException(nameof(aquarium));
+            _fishes = _aquarium.Fishes;
         }
 
         public void ShowInfo()
         {
-            Console.WriteLine($"Maximum fishes count: {_maxFishesCount}\n");
+            Console.WriteLine($"Maximum fishes count: {_aquarium.MaxCapacity}\n");
 
             if (_fishes.Count == 0)
             {

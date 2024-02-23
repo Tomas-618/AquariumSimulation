@@ -76,7 +76,7 @@ namespace AquariumSimulation
             int maxFishesCount = ConsoleUtils.GetNumber("Maximum fishes count: ");
 
             _aquarium = new Aquarium(maxFishesCount);
-            _aquariumUI = new UI(_aquarium.Fishes, _aquarium.MaxFishesCount);
+            _aquariumUI = new UI(_aquarium);
         }
     }
 }
