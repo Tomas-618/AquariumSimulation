@@ -1,7 +1,9 @@
 ﻿namespace AquariumSimulation
 {
-    public interface IReadOnlyLifetime
+    public interface IReadOnlyFish
     {
         int Lifetime { get; }
+
+        bool IsDead { get; }
     }
 }

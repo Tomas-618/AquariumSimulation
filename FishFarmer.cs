@@ -8,7 +8,7 @@ namespace AquariumSimulation
         private UI _aquariumUI;
 
         public FishFarmer() =>
-            Fill();
+            Initialize();
 
         public void Work()
         {
@@ -52,31 +52,31 @@ namespace AquariumSimulation
                         break;
                 }
 
-                UserUtils.WaitForClick();
+                ConsoleUtils.WaitForClick();
                 Console.Clear();
             }
         }
 
         private void CreateFish()
         {
-            int lifetime = UserUtils.GetNumber("Lifetime: ");
+            int lifetime = ConsoleUtils.GetNumber("Lifetime: ");
 
             _aquarium.AddFish(new Fish(lifetime));
         }
 
         private void RemoveFish()
         {
-            int fishIndex = UserUtils.GetNumber("Fish index: ");
+            int fishIndex = ConsoleUtils.GetNumber("Fish index: ");
 
             _aquarium.RemoveFishByIndex(fishIndex - 1);
         }
 
-        private void Fill()
+        private void Initialize()
         {
-            int maxFishesCount = UserUtils.GetNumber("Maximum fishes count: ");
+            int maxFishesCount = ConsoleUtils.GetNumber("Maximum fishes count: ");
 
             _aquarium = new Aquarium(maxFishesCount);
-            _aquariumUI = new UI(_aquarium);
+            _aquariumUI = new UI(_aquarium.Fishes, _aquarium.MaxFishesCount);
         }
     }
 }

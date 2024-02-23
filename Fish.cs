@@ -2,14 +2,18 @@
 
 namespace AquariumSimulation
 {
-    public class Fish : IReadOnlyLifetime
+    public class Fish : IReadOnlyFish
     {
         private readonly int _maxLifetime;
 
         public Fish(in int lifetime)
         {
             _maxLifetime = 60;
-            Fill(lifetime);
+
+            if (lifetime <= 0 || lifetime > _maxLifetime)
+                throw new ArgumentOutOfRangeException($"{nameof(lifetime)}: {lifetime}");
+
+            Lifetime = lifetime;
         }
 
         public int Lifetime { get; private set; }
@@ -21,13 +25,5 @@ namespace AquariumSimulation
 
         public override string ToString() =>
             $"Lifetime: {Lifetime}";
-
-        private void Fill(in int age)
-        {
-            if (age <= 0 || age > _maxLifetime)
-                throw new ArgumentOutOfRangeException($"{nameof(age)}: {age}");
-
-            Lifetime = age;
-        }
     }
 }

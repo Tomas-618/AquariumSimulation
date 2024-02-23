@@ -3,11 +3,10 @@ using System.Collections.Generic;
 
 namespace AquariumSimulation
 {
-    public class Aquarium : IReadOnlyFishes
+    public class Aquarium
     {
+        private readonly List<Fish> _fishes;
         private readonly int _maxFishesCount;
-
-        private List<Fish> _fishes;
 
         public Aquarium(in int maxFishesCount)
         {
@@ -15,10 +14,10 @@ namespace AquariumSimulation
                 throw new ArgumentOutOfRangeException($"{nameof(maxFishesCount)}: {maxFishesCount}");
 
             _maxFishesCount = maxFishesCount;
-            Fill();
+            _fishes = new List<Fish>();
         }
 
-        public IReadOnlyList<IReadOnlyLifetime> Fishes => _fishes;
+        public IReadOnlyList<IReadOnlyFish> Fishes => _fishes;
 
         public int MaxFishesCount => _maxFishesCount;
 
@@ -61,8 +60,5 @@ namespace AquariumSimulation
 
         private void RemoveDiedFishes() =>
             _fishes.RemoveAll(fish => fish.IsDead);
-
-        private void Fill() =>
-            _fishes = new List<Fish>();
     }
 }

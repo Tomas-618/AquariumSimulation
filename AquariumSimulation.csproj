@@ -47,12 +47,11 @@
     <Compile Include="EnumerableExtension.cs" />
     <Compile Include="Fish.cs" />
     <Compile Include="FishFarmer.cs" />
-    <Compile Include="IReadOnlyFishes.cs" />
-    <Compile Include="IReadOnlyLifetime.cs" />
+    <Compile Include="IReadOnlyFish.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UI.cs" />
-    <Compile Include="UserUtils.cs" />
+    <Compile Include="ConsoleUtils.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

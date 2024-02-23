@@ -2,7 +2,7 @@
 
 namespace AquariumSimulation
 {
-    public class UserUtils
+    public class ConsoleUtils
     {
         public static int GetNumber(string text)
         {
