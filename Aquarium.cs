@@ -51,10 +51,10 @@ namespace AquariumSimulation
             _fishes.RemoveAt(fishIndex);
         }
 
-        public void GetOldAllFishes()
+        public void GrowOldAllFishes()
         {
             foreach (Fish fish in _fishes)
-                fish.GetOld();
+                fish.GrowOld();
 
             RemoveDiedFishes();
         }

@@ -31,7 +31,7 @@ namespace AquariumSimulation
                 Console.WriteLine("What do you want to do?");
                 string userInput = Console.ReadLine();
 
-                _aquarium.GetOldAllFishes();
+                _aquarium.GrowOldAllFishes();
 
                 switch (userInput)
                 {

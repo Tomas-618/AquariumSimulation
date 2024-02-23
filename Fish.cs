@@ -16,7 +16,7 @@ namespace AquariumSimulation
 
         public bool IsDead => Lifetime <= 0;
 
-        public void GetOld() =>
+        public void GrowOld() =>
             Lifetime--;
 
         public override string ToString() =>
